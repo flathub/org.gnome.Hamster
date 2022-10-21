@@ -17,7 +17,8 @@ modules:
   - name: python3-dbus-python
     buildsystem: simple
     build-commands:
-      - 'pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"dbus-python==1.2.18\" --no-build-isolation'
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "dbus-python==1.2.18" --no-build-isolation
     sources:
       - type: file
         url: https://files.pythonhosted.org/packages/b1/5c/ccfc167485806c1936f7d3ba97db6c448d0089c5746ba105b6eb22dba60e/dbus-python-1.2.18.tar.gz
@@ -25,7 +26,9 @@ modules:
   - name: python3-pyxdg
     buildsystem: simple
     build-commands:
-      - 'pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyxdg\" --no-build-isolation'
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "pyxdg" --no-build-isolation
+    sources:
       - type: file
         url: https://files.pythonhosted.org/packages/e5/8d/cf41b66a8110670e3ad03dab9b759704eeed07fa96e90fdc0357b2ba70e2/pyxdg-0.28-py2.py3-none-any.whl
         sha256: bdaf595999a0178ecea4052b7f4195569c1ff4d344567bccdc12dfdf02d545ab
