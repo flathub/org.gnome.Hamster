@@ -12,6 +12,9 @@ finish-args:
   - '--socket=fallback-x11'
   - '--share=ipc'
   - '--filesystem=xdg-documents'
+  - "--own-name=org.gnome.Hamster"
+  - "--own-name=org.gnome.Hamster.GUI"
+  - "--own-name=org.gnome.Hamster.WindowServer"
 modules:
   - shared-modules/intltool/intltool-0.51.json
   - name: python3-dbus-python
