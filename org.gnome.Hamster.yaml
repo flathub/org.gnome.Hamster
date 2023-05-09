@@ -47,5 +47,3 @@ modules:
         commit: 70e2547e7b155bda76ceeeb92f26af5bc177fb0a
       - type: patch
         path: patches/00-fix-missing-tags.patch
-      - type: patch
-        path: patches/01-add-remote-icon.patch
