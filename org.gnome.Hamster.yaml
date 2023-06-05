@@ -1,10 +1,9 @@
 ---
 app-id: org.gnome.Hamster
 runtime: org.gnome.Platform
-runtime-version: '43'
+runtime-version: '44'
 sdk: org.gnome.Sdk
 command: hamster
-rename-appdata-file: org.gnome.Hamster.GUI.metainfo.xml
 rename-desktop-file: org.gnome.Hamster.GUI.desktop
 rename-icon: org.gnome.Hamster.GUI
 finish-args:
@@ -40,12 +39,14 @@ modules:
       - ./waf configure --prefix=${FLATPAK_DEST}
       - ./waf build
       - ./waf install
-      - install -vD --mode 644 data/org.gnome.Hamster.GUI.metainfo.xml ${FLATPAK_DEST}/share/metainfo/org.gnome.Hamster.metainfo.xml
+      - install -vD --mode 644 data/org.gnome.Hamster.GUI.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
     sources:
       - type: git
         url: https://github.com/projecthamster/hamster.git
         commit: 70e2547e7b155bda76ceeeb92f26af5bc177fb0a
       - type: patch
         path: patches/00-fix-missing-tags.patch
-      - type: patch
-        path: patches/01-add-remote-icon.patch
+      - type: file
+        path: org.gnome.Hamster.GUI.png
+    post-install:
+      - install -vD --mode 644 org.gnome.Hamster.GUI.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/org.gnome.Hamster.GUI.png
