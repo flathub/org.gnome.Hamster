@@ -35,7 +35,6 @@ modules:
   - name: hamster
     buildsystem: simple
     builddir: true
-    prefix: /app
     build-commands:
       - ./waf configure --prefix=${FLATPAK_DEST}
       - ./waf build
