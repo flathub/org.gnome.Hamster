@@ -7,6 +7,7 @@ command: hamster
 rename-desktop-file: org.gnome.Hamster.GUI.desktop
 rename-icon: org.gnome.Hamster.GUI
 finish-args:
+  - '--device=dri'
   - '--socket=wayland'
   - '--socket=fallback-x11'
   - '--share=ipc'
@@ -34,19 +35,16 @@ modules:
   - name: hamster
     buildsystem: simple
     builddir: true
-    prefix: /app
     build-commands:
+      - sed -i '/org.gnome.Hamster.GUI.metainfo.xml/d' data/wscript
       - ./waf configure --prefix=${FLATPAK_DEST}
       - ./waf build
       - ./waf install
-      - install -vD --mode 644 data/org.gnome.Hamster.GUI.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
     sources:
       - type: git
         url: https://github.com/projecthamster/hamster.git
         commit: 70e2547e7b155bda76ceeeb92f26af5bc177fb0a
-      - type: patch
-        path: patches/00-fix-missing-tags.patch
       - type: file
-        path: org.gnome.Hamster.GUI.png
+        path: org.gnome.Hamster.metainfo.xml
     post-install:
-      - install -vD --mode 644 org.gnome.Hamster.GUI.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/org.gnome.Hamster.GUI.png
+      - install -vD --mode 644 org.gnome.Hamster.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
