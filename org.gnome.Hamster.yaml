@@ -45,9 +45,6 @@ modules:
         url: https://github.com/projecthamster/hamster.git
         commit: 70e2547e7b155bda76ceeeb92f26af5bc177fb0a
       - type: file
-        path: org.gnome.Hamster.GUI.png
-      - type: file
         path: org.gnome.Hamster.metainfo.xml
     post-install:
-      - install -vD --mode 644 org.gnome.Hamster.GUI.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
       - install -vD --mode 644 org.gnome.Hamster.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
