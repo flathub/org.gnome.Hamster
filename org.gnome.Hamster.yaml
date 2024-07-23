@@ -1,17 +1,16 @@
 ---
 app-id: org.gnome.Hamster
 runtime: org.gnome.Platform
-runtime-version: '44'
+runtime-version: '45'
 sdk: org.gnome.Sdk
 command: hamster
 rename-desktop-file: org.gnome.Hamster.GUI.desktop
 rename-icon: org.gnome.Hamster.GUI
 finish-args:
-  - '--device=dri'
-  - '--socket=wayland'
-  - '--socket=fallback-x11'
-  - '--share=ipc'
-  - '--filesystem=xdg-documents'
+  - "--share=ipc"
+  - "--socket=wayland"
+  - "--socket=fallback-x11"
+  - "--filesystem=xdg-documents"
 modules:
   - shared-modules/intltool/intltool-0.51.json
   - name: python3-dbus-python
@@ -43,7 +42,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/projecthamster/hamster.git
-        commit: 70e2547e7b155bda76ceeeb92f26af5bc177fb0a
+        commit: 81be67e08a6c2a69f2f042df5459dba886cbd7de
       - type: file
         path: org.gnome.Hamster.metainfo.xml
     post-install:
