@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
   <id>org.gnome.Hamster</id>
+  <developer id="org.gnome.Hamster">
+    <name>Toms Bauģis and Patryk Zawadzki</name>
+  </developer>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+ and CC-BY-SA-3.0</project_license>
   <name>Hamster</name>
-  <summary>Your personal time keeping tool</summary>
+  <summary>Personal time keeping tool</summary>
   <content_rating type="oars-1.1"/>
+  <branding>
+    <color type="primary" scheme_preference="light">#faa298</color>
+    <color type="primary" scheme_preference="dark">#7f2c22</color>
+  </branding>
   <releases>
     <release date="2020-05-19" version="3.0.2"/>
   </releases>
