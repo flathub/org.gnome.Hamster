@@ -2,7 +2,7 @@
 <component type="desktop-application">
   <id>org.gnome.Hamster</id>
   <developer id="org.gnome.Hamster">
-    <name>Developer name</name>
+    <name>Toms Bauģis and Patryk Zawadzki</name>
   </developer>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+ and CC-BY-SA-3.0</project_license>
