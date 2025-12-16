@@ -47,4 +47,4 @@ modules:
         path: org.gnome.Hamster.metainfo.xml
     post-install:
       - install -vD --mode 644 org.gnome.Hamster.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
-      - sed -i '/^DBusActivatable=true$/d' ${FLATPAK_DEST}/share/applications/org.gnome.Hamster.GUI.desktop
+      - desktop-file-edit  --remove-key=DBusActivatable ${FLATPAK_DEST}/share/applications/org.gnome.Hamster.GUI.desktop
